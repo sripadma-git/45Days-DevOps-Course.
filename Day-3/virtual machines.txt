@@ -1,0 +1,63 @@
+🌐 Virtual Machines (VMs)
+🔹 What is a Virtual Machine?
+
+A Virtual Machine (VM) is a software-based emulation of a physical computer.
+It runs an operating system (OS) and applications just like a real computer, but it’s isolated from the host system.
+
+👉 Example: Running Linux Ubuntu VM inside a Windows PC using VMware or VirtualBox.
+
+🔹 How VMs Work
+
+A Hypervisor (software or firmware) sits between the hardware and the VMs.
+
+The hypervisor allocates CPU, RAM, storage, and networking to each VM.
+
+Each VM runs independently, even if they share the same physical machine.
+
+🔹 Types of Hypervisors
+
+Type 1 (Bare Metal)
+
+Runs directly on physical hardware.
+
+Examples: VMware ESXi, Microsoft Hyper-V, Xen, KVM.
+✅ High performance, used in data centers & cloud.
+
+Type 2 (Hosted)
+
+Runs on top of a host OS.
+
+Examples: Oracle VirtualBox, VMware Workstation.
+✅ Easier to use on personal systems.
+
+🔹 Features of VMs
+
+Isolation: Each VM has its own OS & resources.
+
+Encapsulation: VM is stored as files (can be moved/copied).
+
+Portability: Can migrate VMs between servers.
+
+Snapshot & Cloning: Save VM state or duplicate it.
+
+🔹 Advantages
+
+Run multiple OS on a single machine.
+
+Cost savings (one server runs many VMs).
+
+Strong isolation → security.
+
+Easy backup & recovery with snapshots.
+
+Scalability → can add/remove VMs quickly.
+
+🔹 Disadvantages
+
+Performance overhead (VMs are slower than containers).
+
+Requires powerful hardware.
+
+More resource usage (CPU, RAM).
+
+Management can be complex at scale.
