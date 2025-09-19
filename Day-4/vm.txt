@@ -1,0 +1,98 @@
+🚀 Steps to Create a Virtual Machine (EC2 Instance) in AWS
+
+1. Log in to AWS Console
+
+Go to 👉 AWS Management Console.
+
+Sign in with your account.
+
+2. Navigate to EC2 Service
+
+In the search bar, type EC2.
+
+Click on EC2 (Elastic Compute Cloud).
+
+3. Launch Instance
+
+Click Launch Instance (this means creating a new VM).
+
+Enter:
+
+Name → e.g., MyFirstVM.
+
+4. Choose an Amazon Machine Image (AMI)
+
+AMI = Operating System template for your VM.
+
+Options:
+
+Amazon Linux 2 (Free Tier Eligible) – Lightweight Linux.
+
+Ubuntu Server – Popular Linux distro.
+
+Windows Server – If you want Windows.
+
+5. Choose Instance Type
+
+Instance type = CPU + Memory combination.
+
+For beginners:
+
+t2.micro or t3.micro (Free Tier eligible, 1 vCPU, 1 GB RAM).
+
+6. Key Pair (Login Credentials)
+
+Select Create new key pair (if first time).
+
+Type: RSA, .pem file.
+
+Download the key pair → Keep it safe (you need it to SSH into the VM).
+
+Example: my-key.pem.
+
+7. Network Settings
+
+Select default VPC.
+
+Security group:
+
+Allow SSH (port 22) for Linux.
+
+Allow RDP (port 3389) for Windows.
+
+Allow HTTP (80) or HTTPS (443) if hosting websites.
+
+8. Configure Storage
+
+By default: 8 GB EBS volume (you can increase).
+
+Leave default for Free Tier.
+
+9. Review and Launch
+
+Click Launch Instance.
+
+Wait → Instance will start running.
+
+10. Connect to Your VM
+
+Select your instance → Click Connect.
+
+For Linux:
+
+chmod 400 my-key.pem
+ssh -i my-key.pem ec2-user@<Public-IP>
+
+
+For Ubuntu:
+
+ssh -i my-key.pem ubuntu@<Public-IP>
+
+
+For Windows:
+
+Download RDP file.
+
+Use username & password (decrypt with key pair).
+
+✅ Now you have your own Virtual Machine running in AWS.

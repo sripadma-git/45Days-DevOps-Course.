@@ -1,0 +1,48 @@
+1. Difference Between Manual and Automated VM Creation
+
+Manual VM Creation:
+
+Done via AWS Management Console
+You select AMI, instance type, key pair, and security groups step by step.
+Good for learning or one-time setups.
+
+Limitations: Time-consuming, prone to human error, and difficult to scale.
+
+Automated VM Creation:
+Uses tools like AWS CLI, SDKs, CloudFormation, CDK, or Terraform.
+Infrastructure is defined as code → consistent, repeatable, scalable.
+Supports version control and CI/CD integration.
+Essential in production environments.
+
+
+2. Tools for Automation
+
+AWS CLI → Create/manage EC2 from the command line.
+Example:
+
+aws ec2 run-instances --image-id ami-123456 --count 1 --instance-type t2.micro --key-name my-key --security-groups my-sg
+
+AWS SDK/API → Programmatically create EC2s in different languages (Python boto3, Java, etc.).
+AWS CloudFormation → Declarative JSON/YAML templates for Infrastructure as Code (IaC).
+AWS CDK (Cloud Development Kit) → Write IaC in programming languages like Python, TypeScript, or Java
+Terraform → Cloud-agnostic IaC tool, very popular for multi-cloud environments.
+
+3. Authentication, Authorization, and Validation in API Calls
+
+Authentication → Done via AWS credentials (Access Key, Secret Key, IAM Role, SSO). Ensures the caller is who they claim to be.
+Authorization → Controlled by IAM policies & roles (e.g., only certain users can launch EC2).
+Validation → API calls must follow correct parameters (AMI ID, instance type, subnet, etc.). AWS rejects invalid/malformed requests.
+
+
+4. Importance of Automation
+Reduces manual errors (e.g., wrong security group or region).
+Ensures consistency across environments (Dev, Test, Prod).
+Enables scalability & disaster recovery with repeatable templates.
+Integrates with CI/CD pipelines for faster deployment.
+Saves time → one-click or script-based deployments.
+
+5. Tailoring to the Company’s Cloud Strategy
+If the company is AWS-native → Highlight CloudFormation/CDK.
+If they use multi-cloud → Highlight Terraform for portability.
+If they have DevOps/MLOps pipelines → Stress automation with CLI + CI/CD.
+If they’re in a high-security industry (finance, healthcare) → Emphasize IAM, least privilege, and audit logging.
