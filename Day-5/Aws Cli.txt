@@ -1,0 +1,77 @@
+Efficient Creation and Management of AWS Virtual Machines (VMs) – Day 5 DevOps Class
+Overview:
+This session focuses on efficient methods to create and manage virtual machines (VMs) on AWS, particularly EC2 instances. It builds upon previous lessons that introduced the concept of virtual machines and their creation.
+
+Key Topics Covered:
+
+1. Logging into AWS EC2 Instances
+Two primary ways to log into an AWS EC2 instance:
+AWS Console UI
+Navigate to EC2 dashboard → select running instance → click Connect → establishes browser-based SSH connection.
+Useful for quick, manual access but inefficient for repetitive tasks.
+Using Terminal/SSH Client
+Recommended for developers and DevOps engineers for better control and scalability.
+Popular terminals:
+Mac: iTerm (preferred)
+Windows: PuTTY, MobileXterm (lighter and supports multiple sessions), NoMachine
+To connect:
+Obtain the public IP address of the EC2 instance (private IP works only within VPC).
+Use SSH command with the .pem key pair for authentication:
+ssh -i /path/to/key.pem ubuntu@
+Ensure .pem file permissions are set securely (chmod 600 key.pem), otherwise SSH will reject access.
+
+2. Importance of Key Pairs and Security
+.pem files contain sensitive credentials; must be kept secure.
+Permissions must be restricted to prevent unauthorized access.
+These keys authenticate you to your AWS instance securely.
+
+3. Managing Instances
+Instances can be:
+Stopped: Temporarily halts the instance, avoiding charges for running time.
+Terminated: Permanently deletes the instance.
+Best practice: Stop before terminating.
+
+4. Automating VM Creation and Management
+Automation improves efficiency and scale in managing cloud infrastructure.
+Available automation tools:
+AWS CLI (Command Line Interface)
+AWS CloudFormation Templates (Infrastructure as Code)
+AWS CDK (Cloud Development Kit)
+Terraform
+AWS API / SDKs (e.g., Boto3 for Python)
+
+5. AWS CLI – Practical Usage
+AWS CLI is a powerful tool to manage AWS resources via terminal.
+Installation varies by OS; verify installation with aws --version.
+Configure CLI access credentials:
+Generate Access Key ID and Secret Access Key from AWS Console → Security Credentials.
+Run aws configure and input access keys, default region (e.g., us-east-1), and output format (e.g., JSON).
+Basic commands demonstrated:
+List S3 buckets: aws s3 ls
+Create S3 bucket: aws s3 mb s3://bucketname
+Create EC2 instance: Use aws ec2 run-instances with parameters (AMI, instance type, key pair, security groups).
+Commands can be scripted for automation or stored in repositories for reuse.
+
+6. AWS CloudFormation Templates
+CloudFormation enables defining AWS infrastructure declaratively in JSON/YAML.
+Templates can be uploaded via AWS Console to create stacks.
+Useful for Infrastructure as Code (IaC), covered in more detail in future lessons.
+Example templates for EC2 available on GitHub (AWS Labs).
+
+7. Using AWS SDK (Boto3 for Python)
+Boto3 is a Python SDK to interact programmatically with AWS services.
+Uses the same credentials configured for AWS CLI.
+Enables scripting complex workflows like listing EC2 instances or creating resources.
+Documentation available for learning and reference.
+Summary and Assignment:
+Learned how to:
+Connect to AWS EC2 instances via UI and CLI.
+Securely use and manage key pairs.
+Automate AWS resource creation using CLI and understand CloudFormation basics.
+Use Python SDK (Boto3) for scripting AWS operations.
+Assignment:
+Install AWS CLI on your machine.
+Create AWS security credentials.
+Configure AWS CLI.
+Practice commands such as creating and listing S3 buckets or EC2 instances.
+Explore AWS CLI documentation for further commands.
