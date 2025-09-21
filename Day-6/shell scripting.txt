@@ -1,0 +1,138 @@
+Shell Scripting is a way to write a series of commands for the shell (command-line interface) to execute automatically. It’s commonly used in Linux, Unix, and macOS systems to automate tasks, manage system operations, and simplify repetitive commands.
+
+Key Points:
+
+What is a Shell?
+A shell is a command-line interpreter that provides an interface between the user and the operating system.
+
+Examples: bash, sh, zsh, ksh.
+
+What is a Shell Script?
+A shell script is a text file containing a sequence of shell commands.
+
+You save it with a .sh extension (optional) and run it via the shell.
+
+Why Use Shell Scripting?
+Automates repetitive tasks (backups, file management).
+Simplifies system administration.
+Can schedule tasks using cron jobs.
+Useful for DevOps and server management.
+
+Basic Structure of a Shell Script
+#!/bin/bash       
+# Shebang: tells the system which shell to use
+
+# This is a comment
+echo "Hello World"   # Prints text to the terminal
+
+
+#!/bin/bash → tells the OS to use bash to run the script.
+
+echo → prints text to the terminal.
+
+# → used for comments.
+
+Basic Commands in Shell Scripting
+
+Variables
+name="Sri Padma"
+echo "Hello $name"
+
+
+Conditionals
+if [ $name == "Sri Padma" ]; then
+  echo "Welcome!"
+else
+  echo "Who are you?"
+fi
+
+
+Loops
+for i in 1 2 3 4 5; do
+  echo "Number $i"
+done
+
+
+Functions
+greet() {
+  echo "Hello $1"
+}
+greet "Padma"
+
+
+Reading Input
+read -p "Enter your name: " user
+echo "Hi $user!"
+
+How to Run a Shell Script
+Make it executable:
+chmod +x script.sh
+
+Run it:
+./script.sh
+
+1️⃣ Moving Between Directories
+
+Command: cd (change directory)
+
+# Move to home directory
+cd ~
+
+# Move to /var/log directory
+cd /var/log
+
+# Move one directory up
+cd ..
+
+# Move using absolute path
+cd /usr/local/bin
+
+
+Tip: Use pwd (print working directory) to see your current location.
+
+pwd
+
+2️⃣ Writing Into a File
+
+You can create or write into a file using several methods:
+
+a) Using echo
+# Write text into a new file (overwrites if exists)
+echo "Hello Linux" > myfile.txt
+
+# Append text to an existing file
+echo "Appending this line" >> myfile.txt
+
+b) Using cat
+# Create a new file and write multiple lines
+cat > myfile.txt
+This is line 1
+This is line 2
+# Press Ctrl+D to save and exit
+
+c) Using nano or vim editors
+# Open file in nano editor
+nano myfile.txt
+
+# Open file in vim editor
+vim myfile.txt
+
+3️⃣ Checking CPU, Memory, and Disk Size
+CPU Info
+# Show CPU information
+lscpu
+
+# Show real-time CPU usage
+top    # press 'q' to quit
+
+Memory Info
+# Check memory usage
+free -h
+# -h shows human-readable format
+
+Disk Usage
+# Check disk usage of all partitions
+df -h
+
+# Check detailed usage including files and directories
+du -sh *

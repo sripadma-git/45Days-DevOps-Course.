@@ -1,0 +1,47 @@
+An OS (Operating System) is system software that acts as an intermediary between the computer hardware and the user or application programs. It manages hardware resources and provides services for programs, making it easier for users to interact with the computer.
+
+Here’s a breakdown:
+
+Main Functions of an OS:
+
+1.Process Management:
+
+Manages running programs (processes).
+Handles scheduling, execution, and termination of processes.
+
+2.Memory Management:
+
+Allocates and deallocates memory to programs.
+Manages RAM and virtual memory efficiently.
+
+3.File System Management:
+
+Controls how data is stored and retrieved from storage devices.
+Provides directories, file access permissions, etc.
+
+4.Device Management:
+
+Interfaces with hardware devices like printers, disks, keyboards.
+Uses device drivers for communication.
+
+5.User Interface:
+
+Provides a way for users to interact with the computer (CLI or GUI).
+Security and Access Control:
+Protects data and resources from unauthorized access.
+
+Types of Operating Systems:
+
+Batch OS: Executes batches of jobs without user interaction.
+
+Time-Sharing OS: Allows multiple users to share resources simultaneously.
+
+Distributed OS: Manages a group of distinct computers and makes them appear as a single system.
+
+Real-Time OS: Provides immediate processing for time-critical tasks.
+
+Mobile OS: Specialized for smartphones/tablets (Android, iOS).
+
+Desktop OS: For personal computers (Windows, Linux, macOS).
+
+Example: When you run a program like Chrome, the OS allocates memory, schedules CPU time, and handles input/output, so Chrome can run without worrying about hardware details.
