@@ -1,0 +1,39 @@
+What is a Branch in Git?
+A branch represents a separation of code to work on different versions or features independently.
+
+Example: For a calculator app, instead of altering the stable main/master branch directly, create a feature branch (e.g., feature/v2) to add breaking or major changes.
+Branching allows development and testing without affecting the existing stable application.
+Once tested, feature branches merge back to main/master and can be deleted.
+
+Importance of Branching Strategy:
+Maintains code stability while enabling multiple developers to work concurrently.
+Supports frequent releases without disrupting ongoing active development.
+Commonly used in large-scale projects like Kubernetes with thousands of contributors.
+
+Types of Branches & Their Purpose
+
+1.Master/Main Branch:
+
+The primary branch where the latest stable code lives.
+Always kept up-to-date.
+Active development occurs here.
+
+2:Feature Branches:
+
+Created to develop new features or major changes.
+Isolated from main to avoid breaking existing functionality.
+Multiple feature branches may exist simultaneously.
+Merged back into main when features are stable.
+
+3.Release Branches:
+
+Created from the main branch when preparing for a release.
+Dedicated to final testing and bug fixes.
+Code shipped to customers is built from release branches.
+Prevents new features from entering the release during testing.
+
+4.Hotfix Branches:
+
+Short-lived branches used to quickly fix critical production bugs.
+Changes merged back into both main and release branches to keep all versions updated.
+Enables rapid delivery of urgent fixes without disrupting ongoing development.
