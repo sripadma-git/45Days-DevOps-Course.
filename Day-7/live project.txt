@@ -1,0 +1,75 @@
+AWS Project with Shell Scripting
+
+Step 1: Install AWS CLI
+
+On Linux/macOS:
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+Check:
+aws --version
+
+Step 2: Connect AWS Account (Configure Credentials)
+
+Run:
+aws configure
+
+It will ask:
+AWS Access Key ID: <your-access-key>
+AWS Secret Access Key: <your-secret-key>
+Default region: ap-south-1
+Default output: json
+
+👉 You get Access Key + Secret Key from IAM → Create User → Programmatic access → Attach policy (e.g., AmazonS3FullAccess).
+
+Test:
+aws sts get-caller-identity
+
+Step-3: Write a Beginner Shell Script (s3_project.sh)
+#!/bin/bash
+
+# Variables
+BUCKET_NAME="my-beginner-bucket-$(date +%s)"
+REGION="ap-south-1"
+FILE_NAME="hello.txt"
+
+# Step 1: Create a file
+echo "Hello AWS from Shell Scripting!" > $FILE_NAME
+
+# Step 2: Create an S3 bucket
+echo "Creating bucket: $BUCKET_NAME"
+aws s3 mb s3://$BUCKET_NAME --region $REGION
+
+# Step 3: Upload the file
+echo "Uploading $FILE_NAME to $BUCKET_NAME"
+aws s3 cp $FILE_NAME s3://$BUCKET_NAME/
+
+# Step 4: List files in bucket
+echo "Listing contents of $BUCKET_NAME"
+aws s3 ls s3://$BUCKET_NAME/
+
+Step 4: Run the Script
+chmod +x s3_project.sh
+./s3_project.sh
+
+
+Expected Output:
+
+Creating bucket: my-beginner-bucket-1695671234
+make_bucket: my-beginner-bucket-1695671234
+Uploading hello.txt to my-beginner-bucket-1695671234
+upload: ./hello.txt to s3://my-beginner-bucket-1695671234/hello.txt
+2025-09-25 06:23:45   35 hello.txt
+
+
+✅ Congratulations! You just:
+
+👉Connected AWS CLI with your account
+
+👉Used a shell script to create a file
+
+👉Created an S3 bucket via script
+
+👉Uploaded the file automatically
