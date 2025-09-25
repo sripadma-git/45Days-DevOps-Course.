@@ -1,0 +1,105 @@
+1. What is Version Control?
+
+Definition:
+Version Control is a system that tracks changes to files (mainly source code), allowing multiple people to work collaboratively, revert to previous versions, and avoid conflicts.
+
+Why needed in DevOps?
+Collaboration between developers, testers, DevOps engineers.
+Tracks history of changes.
+Enables rollbacks to stable versions.
+Branching & merging for parallel development.
+Essential for CI/CD pipelines.
+
+Types of Version Control Systems:
+Local VCS: Keeps versions on local machine (e.g., RCS).
+Centralized VCS (CVCS): One central server, e.g., SVN, CVS, Perforce.
+Distributed VCS (DVCS): Each user has a full repository copy. Examples: Git, Mercurial.
+
+2. What is Git?
+Git = Distributed Version Control System (DVCS).
+Created by Linus Torvalds in 2005 for Linux kernel development.
+Each developer has the full repository (including history) locally.
+
+Features:
+Distributed → no single point of failure.
+Lightweight branching & merging.
+Speed and performance.
+Data integrity (SHA-1 hashing).
+Staging area (before commit).
+
+Important Git Areas:
+Working Directory → your actual files.
+Staging Area (Index) → where changes are prepared for commit.
+Local Repository → commits stored on your system.
+Remote Repository → hosted on GitHub, GitLab, Bitbucket, etc.
+
+
+3. What is GitHub?
+
+GitHub = Cloud-based hosting platform for Git repositories.
+
+Provides collaboration features:
+Repository hosting (public/private).
+Issues & bug tracking.
+Pull Requests (PRs) for code reviews.
+Actions (CI/CD automation).
+Wiki & documentation.
+Integration with DevOps tools (Jenkins, Docker, Kubernetes, AWS, etc.).
+
+4. Git Workflow (Basic Flow)
+
+Modify code in Working Directory.
+Use git add → moves changes to Staging Area.
+Use git commit → moves changes to Local Repo.
+Use git push → sends changes to Remote Repo (GitHub).
+
+5. Commonly Used Git Commands
+🔹 Setup
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+git init   # Initialize repository
+git clone <repo-url>   # Clone remote repo
+
+🔹 Basic Workflow
+git status       # Check status
+git add file.txt # Stage a file
+git add .        # Stage all files
+git commit -m "Message"  # Commit staged changes
+git push origin main     # Push to remote branch
+git pull origin main     # Get latest from remote
+
+🔹 Branching
+git branch                # List branches
+git branch feature-x      # Create new branch
+git checkout feature-x    # Switch branch
+git merge feature-x       # Merge branch into current
+git push origin feature-x # Push new branch to remote
+
+🔹 Undo / Reset
+git reset --soft HEAD~1   # Undo last commit (keep changes staged)
+git reset --hard HEAD~1   # Undo last commit (remove changes)
+git checkout -- file.txt  # Discard local changes
+
+6. Git Branching Strategies (Important for DevOps)
+
+Feature Branching → Each feature in its own branch.
+Git Flow → main, develop, feature/*, release/*, hotfix/*.
+Trunk Based Development → small commits frequently to main.
+👉 Companies may use Git Flow or Trunk Based depending on CI/CD pipelines.
+
+7. GitHub Collaboration
+
+Fork: Copy repo to your account.
+Clone: Copy repo to local machine.
+Pull Request (PR): Request to merge your branch into main repo.
+Code Reviews: Other developers review your PR.
+Issues: Track bugs/enhancements.
+
+8. Git in DevOps Lifecycle
+
+Plan: Track issues with GitHub Issues.
+Code: Store and version source code.
+Build: Use GitHub Actions / Jenkins triggered by repo changes.
+Test: Automated tests run on commits.
+Release: CI/CD pipelines deploy code from GitHub.
+Monitor: Integrate with monitoring tools.
