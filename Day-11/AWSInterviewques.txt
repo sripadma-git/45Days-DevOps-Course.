@@ -1,0 +1,109 @@
+What is AWS?
+AWS is a cloud provider offering IaaS (Infrastructure as a Service), PaaS (Platform as a Service), and SaaS (Software as a Service).
+AWS simplifies complex infrastructure tasks by providing them as managed services (e.g., Kubernetes as a service).
+Users can scale services without worrying about underlying infrastructure management.
+
+Core AWS Services for DevOps Engineers
+
+1.EC2 (Elastic Compute Cloud):
+
+Virtual servers in the cloud to deploy applications.
+Previously demonstrated deploying web apps on EC2.
+Essential for understanding cloud compute resources.
+
+2.VPC (Virtual Private Cloud):
+
+Enables secure networking for EC2 instances.
+Includes components like security groups, subnets, CIDR blocks, inbound/outbound traffic rules.
+Critical for securing cloud resources.
+To be covered in intermediate AWS sessions with live projects.
+
+3.EBS (Elastic Block Store):
+
+Persistent storage volumes attached to EC2 instances.
+Used for databases or applications generating files.
+Supports snapshots, backups, detach/reattach workflows.
+Fundamental for managing application storage on AWS.
+
+4.S3 (Simple Storage Service):
+
+Object storage for files, backups, logs, etc.
+Cost-effective and highly scalable.
+Supports encryption by default now, versioning, and access control.
+Widely used for storing application-related data like config files, logs, and large datasets.
+
+5.IAM (Identity and Access Management)
+
+Manages user permissions and security policies.
+Controls who can access AWS resources and what actions they can perform.
+Vital for enforcing least privilege and organizational compliance.
+Integrates with tools like Jenkins and GitHub to control access rights.
+
+6.CloudWatch:
+
+Monitoring and observability service.
+Tracks logs, metrics, and events for AWS resources.
+Enables alerting based on thresholds (e.g., CPU usage).
+Supports automation via triggers for operational actions.
+
+7.Lambda
+
+Serverless compute service for running short-lived functions.
+Automatically manages computing resources without provisioning servers.
+Ideal for automating tasks triggered by CloudWatch events.
+Example: Automatically encrypting unencrypted EBS volumes upon creation.
+
+Additional Important AWS Services for DevOps
+
+8.Cloud Build Services (CI/CD)
+
+AWS CodePipeline: Manages the workflow similar to Jenkins pipelines.
+AWS CodeBuild: Fully managed build service for compiling code, running tests, producing artifacts.
+AWS CodeDeploy: Automates deployment of applications to EC2 or on-premises servers.
+Useful for integrating CI/CD pipelines within AWS.
+Consider migration from Jenkins if fully on AWS, but beware vendor lock-in for multi-cloud strategies.
+
+
+9.AWS Config
+
+Tracks and audits resource configurations.
+Helps maintain compliance (e.g., ensuring all EBS volumes are encrypted).
+Supports automated remediation actions.
+
+10.Billing and Cost Management
+
+Monitors cloud spending by service and time period.
+Essential for cost optimization and budget control.
+
+
+11.KMS (Key Management Service)
+
+Manages encryption keys and secrets.
+Used to secure sensitive data like certificates and encrypted buckets or volumes.
+Supports key rotation and integrates with other AWS services.
+
+12.CloudTrail
+
+Records API calls and user actions for auditing and compliance.
+Provides historical logs for troubleshooting and security analysis.
+Essential for operational risk management.
+
+13.Container Services
+
+EKS (Elastic Kubernetes Service): Managed Kubernetes service.
+If familiar with Kubernetes, learning EKS is straightforward.
+ECS (Elastic Container Service): AWS proprietary container orchestration (non-Kubernetes).
+Fargate: Serverless container runtime allowing containers without managing servers.
+ELK Stack (Elasticsearch, Logstash, Kibana)
+
+Popular logging and analytics stack.
+Useful for aggregating and analyzing logs from microservices.
+Helps identify common errors and performance issues across distributed systems.
+
+
+Summary of the 15 Key AWS Services for DevOps
+
+EC2, VPC, EBS, S3, IAM, CloudWatch, Lambda
+CodePipeline, CodeBuild, CodeDeploy (CI/CD)
+AWS Config, Billing & Cost Management, KMS, CloudTrail
+Container services (EKS, ECS, Fargate), ELK Stack
