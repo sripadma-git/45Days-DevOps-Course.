@@ -1,0 +1,10 @@
+
+This session will cover:
+1. How to create a IAM USER and Login 
+2. How to create EC2 Instance ? What are some of the good practices ?
+3. How to access the EC2 Instance ?
+4. Deploy an application on to AWS EC2 ?
+5. Expose the application to outside world ?
+6. Access the application deployed on AWS from your laptop.
+
+
